@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"", "/home"})
+@WebServlet({"", "/home", "/signup", "/login", "/logout", "/profile"})
 public class FrontController extends HttpServlet {
 
     private final HttpResolver httpResolver = Container.find(HttpResolver.class);
