@@ -2,6 +2,8 @@ package com.javarush.zimina.cmd;
 
 import com.javarush.zimina.entity.User;
 import com.javarush.zimina.service.UserService;
+import com.javarush.zimina.util.Go;
+import com.javarush.zimina.util.Key;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class Login implements Command {
@@ -13,13 +15,13 @@ public class Login implements Command {
 
     @Override
     public String doPost(HttpServletRequest request) {
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        String login = request.getParameter(Key.LOGIN);
+        String password = request.getParameter(Key.PASSWORD);
         User user = userService.login(login, password);
         if (user == null) {
-            return "login?error=wrong";
+            return Go.LOGIN + "?error=wrong";
         }
-        request.getSession().setAttribute("user", user);
-        return "home";
+        request.getSession().setAttribute(Key.USER, user);
+        return Go.HOME;
     }
 }

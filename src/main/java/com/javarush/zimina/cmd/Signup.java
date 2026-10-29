@@ -1,6 +1,8 @@
 package com.javarush.zimina.cmd;
 
 import com.javarush.zimina.service.UserService;
+import com.javarush.zimina.util.Go;
+import com.javarush.zimina.util.Key;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class Signup implements Command{
@@ -12,11 +14,11 @@ public class Signup implements Command{
 
     @Override
     public String doPost(HttpServletRequest request) {
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        String login = request.getParameter(Key.LOGIN);
+        String password = request.getParameter(Key.PASSWORD);
         if(userService.register(login, password)){
-            return "home";
+            return Go.LOGIN;
         }
-        return "signup?error=taken";
+        return Go.SIGNUP + "?error=taken";
     }
 }

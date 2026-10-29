@@ -1,11 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Профиль — Проклятый гримуар</title>
-</head>
-<body>
+<%@ include file="parts/header.jsp" %>
+
 <h1>Профиль</h1>
 
 <c:if test="${not empty sessionScope.user}">
@@ -17,6 +12,4 @@
     <p>Чтобы увидеть профиль, нужно <a href="login">войти</a>.</p>
 </c:if>
 
-<p><a href="home">На главную</a></p>
-</body>
-</html>
+<%@ include file="parts/footer.jsp" %>

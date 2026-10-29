@@ -3,6 +3,7 @@ package com.javarush.zimina.controller;
 
 import com.javarush.zimina.cmd.Command;
 import com.javarush.zimina.config.Container;
+import com.javarush.zimina.util.Go;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"", "/home", "/signup", "/login", "/logout", "/profile"})
+@WebServlet({Go.INDEX, Go.HOME, Go.SIGNUP, Go.LOGIN, Go.LOGOUT, Go.PROFILE})
 public class FrontController extends HttpServlet {
 
     private final HttpResolver httpResolver = Container.find(HttpResolver.class);
