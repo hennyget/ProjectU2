@@ -33,12 +33,15 @@
             text-decoration: none; cursor: pointer; }
         .btn-outline, .site-header button { background: transparent; color: #D4B26A; }
         .site-header form { display: inline; }
+        .card { background: #1E1A26; border: 1px solid #3A3346; border-radius: 12px;
+            padding: 28px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 <header class="site-header">
     <a class="brand" href="home">Гримуар</a>
     <nav class="site-nav">
+        <a href="list-quest">Квесты</a>
         <c:choose>
             <c:when test="${not empty sessionScope.user}">
                 <a href="profile">Профиль</a>

@@ -7,6 +7,7 @@ public class Go {
     public static final String LOGIN = "/login";
     public static final String LOGOUT = "/logout";
     public static final String PROFILE = "/profile";
+    public static final String LIST_QUEST = "/list-quest";
 
     private Go() {
     }
